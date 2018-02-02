@@ -5,8 +5,9 @@
 
 #employees {
 	max-width: 1300px;
-	grid-template-rows: 90px;
-	margin: auto auto auto 0;
+	display: grid;
+	grid-template-rows: 100px;
+	margin: auto;
 
 }
 
@@ -17,8 +18,9 @@
 
 #top-section h2 {
 	letter-spacing: .1em;
-	font-size: 1.1em;
+	font-size: 1.2em;
 	color: #6e6e6e;
+	margin: auto auto auto 0;
 }
 
 #top-section form {
@@ -44,6 +46,10 @@
 	border: 1.5px solid #DFDFDF;
 	border-radius: 7px;
 	padding: 25px;
+}
+
+.employee *{
+	background-color: #FFF;
 }
 
 .employee:hover {

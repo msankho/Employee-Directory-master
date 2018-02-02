@@ -3,14 +3,14 @@ $(document).ready(function () {
 
 	function capitalize(string){
 		return string[0].toUpperCase() + string.slice(1).toLowerCase();
-	}	
+	}	  
  
 	function create_modal_window(user){
 
 		let $fullName = `${capitalize(user.name.first)} ${capitalize(user.name.last)}`;
 		let $address = `${user.location.street}, ${user.location.state} ${user.location.postcode}`;
 		let $email = user.email;
-		let $cell = `(${user.cell.slice(0,3)}) ${user.cell.slice(4,7)}-${user.cell.slice(8,12)}`;
+		// let $cell = `(${user.cell.slice(0,3)}) ${user.cell.slice(4,7)}-${user.cell.slice(8,12)}`;
 		let $dob = user.dob.slice(0,10);
 		let $birthday = `${$dob.slice(5,7)}/${$dob.slice(8,10)}/${$dob.slice(2,4)}`;
 		let modalWindowContent = 
@@ -24,7 +24,7 @@ $(document).ready(function () {
 								<p>${user.location.city}</p>
 							</div>
 							<div class="modal_bottom_section">
-								<p>${$cell}</p>
+								<p>${user.cell}</p>
 								<p>${$address}</p>
 								<p>Birthday: ${$birthday}</p>
 							</div>
@@ -37,8 +37,6 @@ $(document).ready(function () {
 
 	function create_li(user, index){
 
-			// console.log(user);
-			// console.log(typeof user.dob);
 		    let fullName = `${capitalize(user.name.first)} ${capitalize(user.name.last)}`;
 		    return `<li class="employee">
 		    					<img src="${user.picture.large}">
@@ -120,7 +118,6 @@ $(document).ready(function () {
 
 			$('.nextBtn').click(function($event){ 
 
-				console.log($event.target);
 				$currentLi = $($event.target.parentNode.parentNode.parentNode);
 				$nextLi = $currentLi.next();
 				$nextModalWindow = $nextLi.find('.modalWindow');
