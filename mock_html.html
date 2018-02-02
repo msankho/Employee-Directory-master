@@ -1,0 +1,32 @@
+<div id='employees'>
+	<h2>AWESOME STARTUP EMPLOYEE DIRECTORY</h2>
+	<ul id="employeeList">
+		<li class="employee">
+			<img src="${user.picture.large}">
+			<div class="info">
+				<h3>${fullName}</h3>
+				<p>${user.email}</p>
+				<p>${capitalize(user.location.city)}</p>
+			</div>
+			<div class ="modalWindow">
+				<div class="modalContent">
+					<span class="close">&times;</span>
+						<div class="modal_top_section">
+							<img src="${user.picture.large}">
+							<p class="name">${$fullName}</p>
+							<p>${user.location.city}</p>
+						</div>
+						<div class="modal_bottom_section">
+							<p>${user.cell}</p>
+							<p>${$address}</p>
+							<p>Birthday: ${user.dob}</p>
+						</div>
+				</div>
+			</div>
+    	</li>
+    	<li>
+    	</li>
+    	<li>
+    	</li>
+	</ul>
+</div>
